@@ -120,7 +120,7 @@ function gatherCardData(number) {
 
 // Функция записи ответа в объект с ответами
 function saveAnswer(number, data){
-    answers[number] = data
+    answers[number] = data;
 }
 
    
@@ -217,13 +217,19 @@ function updataProgressBar(direction, cardNumber){
     
     // Обновляем прогресс бар
 
-    const progressBar = document.querySelector(`[data-card="${cardNumber}"]`).querySelector('progress');
+    const progressBar = document
+    .querySelector(`[data-card="${cardNumber}"]`)
+    .querySelector(".progress");
     if(progressBar) {
         
         // Обновить число прогресс бара
-        progressBar.querySelector('.progress__label strong').innerText = `${progress}%`;
+        progressBar.querySelector(
+            ".progress__label strong"
+        ).innerText = `${progress}%`;
 
-        // Обновить полосу прогресс бара
-        progressBar.querySelector('.progress__line-bar').style = `width: ${progress}%`;
+        // Обновить полоску прогресс бара
+        progressBar.querySelector(
+            ".progress__line-bar"
+        ).style = `width: ${progress}%`;
     }
 }
